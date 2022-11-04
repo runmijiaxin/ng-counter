@@ -80,4 +80,20 @@ describe('CounterComponent', () => {
     expect(component.isLargeOrEqualsThanZero()).toBeTrue();
     // then
   });
+
+  it('should return false when count number larger than 10', () => {
+    // given
+    component.count = 11;
+    // when
+    expect(component.isLessOrEqualsThanTen()).toBeFalse();
+    // then
+  });
+
+  it('should return true when count number less or equals than 10', () => {
+    // given
+    component.count = 10;
+    // when
+    expect(component.isLessOrEqualsThanTen()).toBeTrue();
+    // then
+  });
 });

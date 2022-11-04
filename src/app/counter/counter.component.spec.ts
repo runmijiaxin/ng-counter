@@ -23,7 +23,7 @@ describe('CounterComponent', () => {
 
   it('should add 1 when click plus button', () => {
     // given
-    component.count = 0;
+    component.counter.count = 0;
     const plusBtn = fixture.nativeElement.querySelector('[data-test="plusBtn"]');
     // when
     plusBtn.click();
@@ -35,7 +35,7 @@ describe('CounterComponent', () => {
 
   it('should substract 1 when click minus button', () => {
     // given
-    component.count = 0;
+    component.counter.count = 0;
     const minusBtn = fixture.nativeElement.querySelector('[data-test="minusBtn"]');
     // when
     minusBtn.click();
@@ -47,7 +47,7 @@ describe('CounterComponent', () => {
 
   it('should minus btn disappear when count number less than 0', () => {
     // given
-    component.count = -1;
+    component.counter.count = -1;
     // when
     fixture.detectChanges();
     // then
@@ -57,7 +57,7 @@ describe('CounterComponent', () => {
 
   it('should plus btn disappear when count number more than 10', () => {
     // given
-    component.count = 11;
+    component.counter.count = 11;
     // when
     fixture.detectChanges();
     // then
@@ -67,7 +67,7 @@ describe('CounterComponent', () => {
 
   it('should return false when count number less than 0', () => {
     // given
-    component.count = -1;
+    component.counter.count = -1;
     // when
     expect(component.isLargeOrEqualsThanZero()).toBeFalse();
     // then
@@ -75,7 +75,7 @@ describe('CounterComponent', () => {
 
   it('should return true when count number less than 0', () => {
     // given
-    component.count = 1;
+    component.counter.count = 1;
     // when
     expect(component.isLargeOrEqualsThanZero()).toBeTrue();
     // then
@@ -83,7 +83,7 @@ describe('CounterComponent', () => {
 
   it('should return false when count number larger than 10', () => {
     // given
-    component.count = 11;
+    component.counter.count = 11;
     // when
     expect(component.isLessOrEqualsThanTen()).toBeFalse();
     // then
@@ -91,7 +91,7 @@ describe('CounterComponent', () => {
 
   it('should return true when count number less or equals than 10', () => {
     // given
-    component.count = 10;
+    component.counter.count = 10;
     // when
     expect(component.isLessOrEqualsThanTen()).toBeTrue();
     // then
@@ -99,7 +99,7 @@ describe('CounterComponent', () => {
 
   it('should count be 0 when click reset btn', () => {
     // given
-    component.count = 5;
+    component.counter.count = 5;
     fixture.detectChanges();
     const resetBtn = fixture.nativeElement.querySelector('[data-test="resetBtn"]');
     // when

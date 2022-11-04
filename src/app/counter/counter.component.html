@@ -1,5 +1,5 @@
 <p>counter works!</p>
 <button data-test="plusBtn" *ngIf="isLessOrEqualsThanTen()" (click)="increase()">+</button>
-<span data-test="displayCount">number: {{count}}</span>
+<span data-test="displayCount" [ngClass]="{'green': !isLargeOrEqualsThanZero()}">number: {{count}}</span>
 <button data-test="minusBtn" *ngIf="isLargeOrEqualsThanZero()" (click)="decrease()">-</button>
-<!-- <button data-test="minusBtn" (show)="isLargeOrEqualsThanZero()" (click)="decrease()">-</button> -->
+<!-- <button data-test="minusBtn" [hidden]="isLargeOrEqualsThanZero()" (click)="decrease()">-</button> -->

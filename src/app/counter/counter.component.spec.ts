@@ -96,4 +96,17 @@ describe('CounterComponent', () => {
     expect(component.isLessOrEqualsThanTen()).toBeTrue();
     // then
   });
+
+  it('should count be 0 when click reset btn', () => {
+    // given
+    component.count = 5;
+    fixture.detectChanges();
+    const resetBtn = fixture.nativeElement.querySelector('[data-test="resetBtn"]');
+    // when
+    resetBtn.click();
+    fixture.detectChanges();
+    const displayCount = fixture.nativeElement.querySelector('[data-test="displayCount"]');
+    // then
+    expect(displayCount.textContent).toEqual('number: 0')
+  });
 });
